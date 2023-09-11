@@ -147,20 +147,20 @@ require_once "../../library/SMTP.php";
 // $mail->SMTPDebug = 3;
 $mail = new PHPMailer();
 $mail->isSMTP();
-$mail->Host = "mbx.averin.co.id"; //host mail server (sesuaikan dengan mail hosting Anda)
+$mail->Host = "mail.metir.my.id"; //host mail server (sesuaikan dengan mail hosting Anda)
 $mail->SMTPAuth = true;
 
-$mail->Username = "adokter@averin.co.id";   //nama-email smtp
-$mail->Password = "Averin@2023!";           //password email smtp
+$mail->Username = "mtaufikrama@metir.my.id";   //nama-email smtp
+$mail->Password = "MeTiR102!";           //password email smtp
 
 $mail->SMTPSecure = "ssl";
 $mail->Port = 465;
-$mail->From = "adokter@averin.co.id"; //email pengirim
+$mail->From = "mtaufikrama@metir.my.id"; //email pengirim
 $mail->FromName = "A-DOKTER"; //nama pengirim
 $mail->addAddress($email, "");
 
 $recipients = array(
-    'adokter@averin.co.id' => 'CC 1',
+    'mtaufikrama@metir.my.id' => 'CC 1',
     // ..
 );/**/
 foreach ($recipients as $email => $name) {
@@ -168,7 +168,7 @@ foreach ($recipients as $email => $name) {
 }
 
 $mail->isHTML(true);
-$subject = 'RESET PASSWORD A-DOKTER';
+$subject = 'REGISTRASI A-DOKTER';
 $message = $keterangan;
 
 $mail->isHTML(true);

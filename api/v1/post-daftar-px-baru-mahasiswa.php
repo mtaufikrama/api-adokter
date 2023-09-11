@@ -123,33 +123,26 @@ require_once "../../library/POP3.php";
 require_once "../../library/SMTP.php";
 
 // $mail->SMTPDebug = 3;
-$mail = new PHPMailer;      
-$mail->isSMTP();                          
-//$mail->Host = "srv42.niagahoster.com"; //host mail server (sesuaikan dengan mail hosting Anda)
-// $mail->Host = "smtp.gmail.com"; //host mail server (sesuaikan dengan mail hosting Anda)
-$mail->Host = "mbx.averin.co.id"; //host mail server (sesuaikan dengan mail hosting Anda)
-//Set this to true if SMTP host requires authentication to send email
-$mail->SMTPAuth = true;     
-//Provide username and password               
-//$mail->Username = "saga@averin.co.id";   //nama-email smtp     
-//$mail->Password = "Averin1234!";           //password email smtp  
-               
-$mail->Username = "adokter@averin.co.id";   //nama-email smtp  
-$mail->Password = "Averin@2023!";           //password email smtp  
+$mail = new PHPMailer();
+$mail->isSMTP();
+$mail->Host = "mail.metir.my.id"; //host mail server (sesuaikan dengan mail hosting Anda)
+$mail->SMTPAuth = true;
 
-$mail->SMTPSecure = "ssl"; 
-$mail->Port = 465;  
-$mail->From = "adokter@averin.co.id"; //email pengirim
+$mail->Username = "mtaufikrama@metir.my.id";   //nama-email smtp
+$mail->Password = "MeTiR102!";           //password email smtp
+
+$mail->SMTPSecure = "ssl";
+$mail->Port = 465;
+$mail->From = "mtaufikrama@metir.my.id"; //email pengirim
 $mail->FromName = "A-DOKTER"; //nama pengirim
 $mail->addAddress($email, "");
 
 $recipients = array(
-'adokter@averin.co.id' => 'CC 1',
-// ..
+    'mtaufikrama@metir.my.id' => 'CC 1',
+    // ..
 );/**/
-foreach($recipients as $email => $name)
-{
-   $mail->AddCC($email, $name);
+foreach ($recipients as $email => $name) {
+    $mail->AddCC($email, $name);
 }
 
 $mail->isHTML(true);
